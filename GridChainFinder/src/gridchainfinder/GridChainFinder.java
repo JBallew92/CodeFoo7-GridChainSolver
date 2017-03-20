@@ -29,7 +29,6 @@ public class GridChainFinder {
             = (Integer o1, Integer o2) -> o1 - o2;
 
     public static void main(String[] args) {
-        //total complexity O(n^4)
         //get user input for an n x n matrix
         //then determine the area of the grid
         System.out.println("Enter the width of the grid: ");
