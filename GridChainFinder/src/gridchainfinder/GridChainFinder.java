@@ -29,11 +29,17 @@ public class GridChainFinder {
             = (Integer o1, Integer o2) -> o1 - o2;
 
     public static void main(String[] args) {
+        //total complexity O(n^4)
         //get user input for an n x n matrix
         //then determine the area of the grid
+        input = -1;
         System.out.println("Enter the width of the grid: ");
         Scanner scanner = new Scanner(System.in);
-        input = scanner.nextInt();
+        while (input < 0 && scanner.hasNextInt()) {
+            input = scanner.nextInt();
+            if (input < 0)
+                System.out.println("Please enter a positive whole number: ");
+        }
         area = Math.pow(input, 2);
 
         int sum = 0;
@@ -61,7 +67,7 @@ public class GridChainFinder {
             }
             System.out.print("\n");
         }
-        
+
         //begin at grid[0][0] and begin searching for valid chains using checkNeighbor()
         //each "chain" begins at userGrid[i][j]
         for (int i = 0; i < input; i++) {
@@ -86,10 +92,10 @@ public class GridChainFinder {
         //check if sum = area, then split the comma seperated integers so into an array 
         if (sum == area) {
             String[] temp = chain.split(",");
-            
+
             //check that chain "temp" length is at least grid.length -1
             if (temp.length >= grid.length - 1) {
-                
+
                 //clone cells then sort clone then append to string so that we can make a set of cell combos used
                 ArrayList<Integer> clone = new ArrayList<>(cells.size());
                 for (int i = 0; i < cells.size(); i++) {
@@ -100,7 +106,7 @@ public class GridChainFinder {
                 for (int i = 0; i < clone.size(); i++) {
                     tempCells += clone.get(i);
                 }//end for i
-                
+
                 //check that the grids used to make "temp" chain have not already been used by a previous chain
                 //if not then add that chain to valid chains and add the grids used to cellCombos
                 if (!cellCombos.contains(tempCells)) {
@@ -115,10 +121,10 @@ public class GridChainFinder {
                     }//end for i
                     //add the appendedChain to the list of validChains to be displayed later
                     validChains.add(appendedChain);
-                }//end if !comboCell  
+                }//end if !comboCell 
             }//end if temp > length
         }//end if sum = area 
-        
+
         //if sum<=area then continue searching for valid chains until sum==area
         //the <= is necassary incase you have cells with the value 0 that could still be used to make unique combos
         if (sum <= area) {
