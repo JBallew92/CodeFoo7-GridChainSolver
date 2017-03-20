@@ -15,7 +15,7 @@ The checkNeighbor method is called atleast 8 more times even after a chain is fo
 
 If the sum exceeds the area then the search does not continue to branch off to surrounding cells.
 
-BigO Complexity is ????
+BigO Complexity is O(n^4)
 
 # CodeFoo7 - BackEnd
 Please refer to its respective repository <a href="https://github.com/JBallew92/CodeFoo7-BackEnd">here</a>
