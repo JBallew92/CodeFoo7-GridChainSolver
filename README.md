@@ -1,3 +1,9 @@
+# CodeFoo7-Introduction Video
+<a href="https://www.youtube.com/watch?v=xI2GDiLRjyA">A Brief Introduction</a>
+
+# CodeFoo7-Lincoln Log Problem
+<a href="https://www.youtube.com/watch?v=CIfKVJgA_pc&t=1s">Lincoln Log Problem</a>
+
 # CodeFoo7-GridChainSolver
 Find all cells whose sum equals the grids area. Chains are unique.
 
